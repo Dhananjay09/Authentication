@@ -10,7 +10,7 @@ const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/users");
 const fileRoutes = require("./routes/image");
 const { NODE_PORT, NODE_ENV, DATABASE_URL } = process.env;
-const PORT = NODE_PORT || 8000;
+const PORT = process.env.NODE_ENV.PORT|| NODE_PORT || 8000;
 const isDevelopment = NODE_ENV === "development";
 if (isDevelopment) {
   app.use(morgan("dev"));
