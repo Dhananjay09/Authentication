@@ -97,9 +97,10 @@ exports.updateevent=(req, res)=>{
     })
   })
 }
-exports.deleteevent=(req, res)=>{
-  const {id}=req.body;
-  Calender.findByIdAndDelete({_id: id}).exec((err, user)=>{
+exports.removeevent=(req, res)=>{
+  const {id1}=req.body;
+  console.log(id1);
+  Calender.findByIdAndDelete({_id: id1}).exec((err, user)=>{
     if(err){
       return res.status(400).json({
         "error": "Error Occured"
